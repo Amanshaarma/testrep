@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="HandlingHtmlForm.php" method="post">
+            <label for="username">username</label>
+            <input required type="email" id="email" name="username">
+            <spam id="Emailerror"></spam>
+            <label for="passward">Passward</label>
+            <input required type="password" id="pass" name="passward">
+            <span id="passwardError"></span>
+            Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+            <br><br>
+            Gender:
+            <input type="radio" name="gender" value="female">Female
+            <input type="radio" name="gender" value="male">Male
+            <input type="radio" name="gender" value="other">Other
+            <!-- <label for="gender">Gender</label>
+            <select name="gender" id="gender">
+                <option value="other">Other</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select> -->
+            <span id="GenderError"></span>
+            <br><br>
+            <button type="submit" name="submit">submit</button>
+            
+            
+        </form>
+        <!-- <script>
+            fetch("HandlingHtmlForm.php").then(Response=>Response.text())
+            .then(data =>{
+                document.getElementById('nameerror').innerHTML = data;
+            })
+            .catch(erroer=>console.error("Error:",error));
+        </script> -->
+        <a href="HandlingHtmlForm.php?subject=name&web=w3School">test $GET</a>
+    </div>
+</body>
+
+</html>
