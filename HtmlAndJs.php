@@ -50,6 +50,8 @@ xhttp.send("username=" + userName);
 
 
 <?php
+  $cat = $_COOKIE["User"];
+  echo "$cat";
   if ($_SERVER["REQUEST_METHOD"] == "POST") 
   {
     $name =  inputTrim($_POST["username"] );
