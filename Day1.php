@@ -76,6 +76,8 @@
         else
             echo "Not equal";
         echo pow(2,5);
+        $S = "$2y$10$zILEMn25iCGbrMix4wP8Z.FuUkdlBW19mIu9.LrIPI/kCK6T6479O";
+        echo strlen($S);
         ?>
 </body>
 </html>

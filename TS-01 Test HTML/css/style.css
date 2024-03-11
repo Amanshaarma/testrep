@@ -107,7 +107,7 @@ form label {
     padding: 7px 15px;
     cursor: pointer;
     transition: .2s all ease;
-        border-radius: 5px;
+    border-radius: 5px;
 }
 
 .form-field input[type="submit"]:hover, .load-btn:hover {

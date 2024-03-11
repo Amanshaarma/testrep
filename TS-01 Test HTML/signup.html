@@ -14,7 +14,6 @@
 </head>
 <body>
     
-    
     <section class="main-banner">
         <div class="container">
             <div class="row">
@@ -52,22 +51,22 @@
                <div class="col-md-12">
                    <div class="main-width">
                     <h2>Sign Up</h2>
-                   <form class="signup-form">
+                   <form class="signup-form" action="../php/signup.ini.php"  method="post" enctype="multipart/form-data">
                        <div class="wd70">
                       <div class="form-field">
                         <label>First Name*</label>
-                          <input type="text" placeholder="Enter your First Name">
+                          <input type="text" name="fname" placeholder="Enter your First Name">
                      </div>
                          <div class="form-field">
                         <label>Last Name*</label>
-                          <input type="text" placeholder="Enter your Last Name">
+                          <input type="text" name="lname" placeholder="Enter your Last Name">
                      </div>
                        </div>
                        
                        <div class="wd30">
                        <div class="upload-picture">
                          <div class="fileUpload">
-                          <input type="file" class="upload" />
+                          <input type="file" name="file" class="upload"  />
                           </div>
                            <label>Upload Image</label>
                        </div>
@@ -75,24 +74,24 @@
                        
                          <div class="form-field">
                         <label>Email Address*</label>
-                          <input type="email" placeholder="Enter your Email Address">
+                          <input type="email" name="email" placeholder="Enter your Email Address">
                      </div>
                          <div class="form-field">
                         <label>Password*</label>
-                          <input type="password" placeholder="Enter Password">
+                          <input type="password" name="password" placeholder="Enter Password">
                      </div>
                            <div class="form-field">
                         <label>Confirm Password*</label>
-                          <input type="password" placeholder="Re-enter Password">
+                          <input type="password" name="copypawd" placeholder="Re-enter Password">
                      </div>
                           <div class="form-field">
                         <label>Phone Number* </label>
-                          <input type="number" placeholder="Enter your Phone Number">
+                          <input type="number" name="phone" placeholder="Enter your Phone Number">
                      </div>
                        
                          <div class="form-field">
                         <label>Address* </label>
-                          <textarea placeholder="Enter your Address"></textarea>
+                          <textarea name="address" placeholder="Enter your Address"></textarea>
                      </div>
                        
                         <div class="form-field">

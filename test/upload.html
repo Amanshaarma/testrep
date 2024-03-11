@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>File Upload</title>
+    <link rel="stylesheet" href="../TS-01 Test HTML/css/style.css">
 </head>
 <body>
 
 <!-- Your file upload form goes here -->
 <form action="upload.php" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <input type="submit" value="Upload">
+    <div class="wd30">
+        <div class="upload-picture">
+          <div class="fileUpload">
+              <input type="file" name="upload" class="upload"  />
+              <label>Upload Image</label>
+            </div>
+        </div>
+    </div>
+    <input type="text" name="name" class="upload">
+        <button type="submit">submit</button>
 </form>
 
 </body>

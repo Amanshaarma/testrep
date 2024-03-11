@@ -5,9 +5,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Example: print some data
   
     // Redirect to the HTML file in the super directory after processing the upload
-    $uploadedFileName = $_FILES['file']['name'];
+    print_r($_FILES);
+    print_r($_POST);    
+    $uploadedFileName = $_FILES['upload']['name'];
     echo "File uploaded: $uploadedFileName<br>";
-    redirect('../test/upload.html');
+    // redirect('../test/upload.html');
     // header('Location: ../test/upload.html');
     exit();
 }

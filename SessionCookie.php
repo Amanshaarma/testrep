@@ -31,14 +31,22 @@ if(!isset($_COOKIE[$cookiename])) {
 $servername =   "localhost";
 $username = "root";
 $passwoard = "root";
-$conn = mysqli_connect($username, $username, $passwoard);
+// $conn = mysqli_connect($username, $username, $passwoard);
 $sql = "create database php";
-mysqli_query($conn, $sql);
-if (mysqli_connect_errno()) {
-    // If there is an error with the connection, stop the script and display the error.
-    exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+// // mysqli_query($conn, $sql);
+// if (mysqli_connect_errno()) {
+//     // If there is an error with the connection, stop the script and display the error.
+//     exit('Failed to connect to MySQL: ' . mysqli_connect_error());
+// }
+// echo "Connect sussesfulll";
+if(empty($sql))
+{
+  echo "true";
 }
-echo "Connect sussesfulll";
+else 
+{
+  echo "false";
+}
 
 ?>
 

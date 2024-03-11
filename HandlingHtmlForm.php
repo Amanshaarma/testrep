@@ -99,4 +99,5 @@
         $hash = password_hash($passward,PASSWORD_DEFAULT);
         return $hash;
     }
+    
     ?>
