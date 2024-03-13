@@ -33,9 +33,9 @@
                      <ul>
                         <li><a href="signup.html">Sign Up</a></li>
                          <li><a href="login.html" class="active">Login</a></li>
-                         <li><a href="property.html">Add Property</a></li>
-                         <li><a href="property-list.html">List Property</a></li>
-                         <li><a href="search-page.html">Search Property</a></li>
+                         <!-- <li><a href="property.html">Add Property</a></li>
+                         <li><a href="property-list.php">List Property</a></li>
+                         <li><a href="search-page.html">Search Property</a></li> -->
                      </ul>
                        
                         <a href="#" class="mobile-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
@@ -52,16 +52,16 @@
                <div class="col-md-12">
                    <div class="main-width">
                     <h2>Login</h2>
-                   <form class="login-form" action="">
+                   <form class="login-form" action="phpLogin/login.ini.php" method="post">
                        
 
                          <div class="form-field">
                         <label>Email Address*</label>
-                          <input type="email" placeholder="Enter your Email Address">
+                          <input type="email" name="email" placeholder="Enter your Email Address">
                      </div>
                          <div class="form-field">
                         <label>Password*</label>
-                          <input type="password" placeholder="Enter Password">
+                          <input type="password" name="password" placeholder="Enter Password">
                               <div class="formcheck">
                           <input type="checkbox" id="remember" checked>
                            <label for="remember">Remember me</label>
@@ -70,10 +70,10 @@
                      </div>
                       
                         <div class="form-field">
-                           <input type="submit" value="Login"> 
+                           <input type="submit" value="submit"> 
                        </div>
                        
-                       <p class="alredy-sign">Sign up <a href="#"><u> Now</u></a></p>
+                       <p class="alredy-sign">Sign up <a href="signup.html"><u> Now</u></a></p>
                    </form>
                    </div>
                 </div>

@@ -17,6 +17,9 @@
           </label>
           
     </form>
+    <!-- <div>
+        <img src="fileupload.php" alt="" width="100px" height="100px">
+    </div> -->
 
     <script>
         const dropContainer = document.getElementById("dropcontainer")

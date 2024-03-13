@@ -76,5 +76,13 @@ function myFunction() {
   echo $myArr[2];
   $myArr[2];
 
+$password;
+$password1 = 12345678900;
 
+// $hash = password_hash($password,PASSWORD_BCRYPT);
+
+if(!isset($password))
+{
+    echo "same";
+}
 ?>

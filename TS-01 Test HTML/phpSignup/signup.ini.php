@@ -12,7 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $copypwd = $_POST["copypawd"]; 
     $phone = $_POST["phone"];
     $address = $_POST["address"];
-    $image = file_get_contents( $_FILES['file']['tmp_name']);
+    if($_FILES['file']['name'])
+    {
+        $image = file_get_contents( $_FILES['file']['tmp_name']);
+    }
 
     try {
         require_once 'dbh.inc.php';
@@ -25,11 +28,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
         if (is_input_empty($firstname, $lastname, $email, $password, $copypwd, $phone, $address)) {
             $error['filed'] = "Fields are empty ";
-            echo  "Fields are empty ";
         }
         if (is_email_invalid($email)) {
             $error['email'] = "invalid email ";
-            echo "invalid email ";
         }
         if(phonenumber($phone))
         {
@@ -37,33 +38,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         }
         if (passward_check($password, $copypwd)) {
             $error['passaword_missmatch'] = "Both password are different";
-            echo "Both password are different";
         }
         if (is_email_register($pdo, $email)) {
             $error['registered'] = "Email already register";
-            echo "Email already register";
         }
 
-        function image(&$image)
+        function image()
         {
-            if(isset($_FILES['image']['name']) && $_FILES['image']['error'] == 0)
-            {
-                $image = file_get_contents($_FILES['image']['tmp_name']);  
-            }
-            else
+            if(!(isset($_FILES['image']['name']) && $_FILES['image']['error'] == 0))
             {
                 echo  "image is not valid";
                 $error['image'] = "image is not valid";
             }
         }
+        image();
         
 
         require_once 'config_Session.ini.php';
         if ($error) {
             $_SESSION["error_signup"] = $error;
 
-            $url = "../TS-01 Test HTML/signup.html";
-            header('Location: ' . $url, true, 302);
+            $url = "../signup.html";
+            header('Location: ' . $url , true, 302);
             die();
         }
 
@@ -78,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $address
         );
 
-        $url = "../TS-01 Test HTML/login.html";
+        $url = "../login.html";
         header('Location: ' . $url."?signup=success", true, 302);
         $pdo = null;
         $stmt = null;
@@ -87,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("query failed" . $err->getMessage());
     }
 } else {
-    $url = "../TS-01 Test HTML/signup.html";
+    $url = "../signup.html";
     header('Location: ' . $url, true, 302);
     exit;
 }
