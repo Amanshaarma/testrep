@@ -5,6 +5,7 @@ if (!(isset($_SESSION["user_id"]))) {
     exit;
 }
 
+
 ?>
 
 
@@ -38,23 +39,27 @@ if (!(isset($_SESSION["user_id"]))) {
     </section>
 
     <section class="nav-banner">
-        <div class="container">
+           <div class="container">
+
             <div class="row">
-                <div class="col-md-12">
-                    <div class="navs">
-                        <ul>
-                            <!-- <li><a href="signup.html">Sign Up</a></li>
+               <div class="col-md-12">
+                   <div class="navs">
+                     <ul>
+                        <!-- <li><a href="signup.html">Sign Up</a></li>
                          <li><a href="login.html">Login</a></li> -->
+                         <li><a href="Profile.php">Profile</a></li>
                             <li><a href="property.html">Add Property</a></li>
                             <li><a href="property-list.php" class="active">List Property</a></li>
                             <li><a href="search-page.html">Search Property</a></li>
                             <li><a href="phpLogin/logout.ini.php">Logout</a></li>
-                        </ul>
-                        <a href="#" class="mobile-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
 
-                    </div>
+                     </ul>
+                       
+                        <a href="#" class="mobile-icon"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                       
+                   </div>
                 </div>
-            </div>
+               </div>
         </div>
     </section>
 
@@ -81,6 +86,10 @@ if (!(isset($_SESSION["user_id"]))) {
                             echo '    <li><img src="images/icon-location.png" alt="location"><strong>Location: </strong>' . $key['location'] . '</li>';
                             echo '</ul>';
                             echo '<p>' . $key['description'] . '</p>';
+                            echo '<div class="button-container">
+                                 <a href="DeleteAndEdit/Editproperty.php?key='.$key['prop_id'] .'"><button>Edit </button></a>
+                                 <a href="DeleteAndEdit/delete.php?key='.$key['prop_id'] .'"><button>Delete</button></a>
+                            </div>';
 
                             echo '</div>';
                         }

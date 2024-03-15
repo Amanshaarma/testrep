@@ -9,6 +9,7 @@ if(!isset($_SESSION['user_id']))
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST')
 {
+    $userid = $_SESSION['user_id'];
     $propName = $_POST['propName'];
     $proptype = $_POST['proptype'];
     $minPrice = $_POST['minPrice'];
@@ -27,43 +28,47 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST')
     $emptyValue = [];
     if(isNotNull($propName))
     {
-        $emptyValue[0] = "value is not found";
+        $emptyValue[0] = " propName value is not found";
     }
     if(isNotNull($proptype))
     {
-        $emptyValue[1] = "value is not found";
+        $emptyValue[1] = "propptype value is not found";
     }
     if(isNotNull($minPrice))
     {
-        $emptyValue[2] = "value is not found";
+        $emptyValue[2] = "minPrice value is not found";
     }
     if(isNotNull($maxPrice))
     {
-        $emptyValue[3] = "value is not found";
+        $emptyValue[3] = " maxPrice value is not found";
     }
     if(isNotNull($location))
     {
-        $emptyValue[4] = "value is not found";
+        $emptyValue[4] = " location value is not found";
     }
-    if(checkMaxMin($maxPrice,$minPrice))
+    if(!empty($maxPrice) && !empty($minPrice))
     {
-        $emptyValue[5] = "max and min is not compartable";
+        if(checkMaxMin($maxPrice,$minPrice))
+        {
+            $emptyValue[5] = "max and min is not compartable";
+        }
     }
     
+    
 
-
-    if($emptyValue)
+    if(count($emptyValue) == 5)
     {
         header('Location: ../search-page.html');
+        // print_r($emptyValue);
         $emptyValue = null;
         exit;
     }
-
     # query work here
 
-    $searchResult = getResult($pdo,$propName,$proptype,$minPrice,$maxPrice,$location);
+    $searchResult = getResult($pdo,$propName,$proptype,$minPrice,$maxPrice,$location,$userid);
     if($searchResult)
     {
+        // print_r($searchResult);
         $_SESSION['serachResult'] = $searchResult;
         header('Location: ../property-list.php');
         exit;

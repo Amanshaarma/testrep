@@ -41,6 +41,7 @@ fwrite($fielcontent,$replacement);
 fclose($fielcontent);
 echo "\n".$count; 
 $arr = array("Volvo", "BMW", "Toyota");
+$len = 
 $arr += ["Aman"];
 array_push($arr,2);
 print_r($arr);
@@ -85,4 +86,6 @@ if(!isset($password))
 {
     echo "same";
 }
+
+
 ?>

@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST")
         
         
         $_SESSION["last_regeneration "] = time();
-        $url = "../property-list.php";
+        $url = "../Profile.php";
         header('Location: ' . $url);
         exit;
         $pdo = null;

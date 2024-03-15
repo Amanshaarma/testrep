@@ -13,8 +13,8 @@ function checkMaxMin($max,$min)
     return   ($min > $max)? true:false;
 }
 
-function getResult($pdo,$propName,$proptype,$minPrice,$maxPrice,$location)
+function getResult($pdo,$propName,$proptype,$minPrice,$maxPrice,$location,$userid)
     {
-        $result = fetchResult($pdo,$propName,$proptype,$minPrice,$maxPrice,$location);
+        $result = fetchResult($pdo,$propName,$proptype,$minPrice,$maxPrice,$location,$userid);
         return  $result;
     }

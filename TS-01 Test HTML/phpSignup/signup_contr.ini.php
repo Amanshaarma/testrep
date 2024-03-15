@@ -56,6 +56,14 @@ function passward_check(string $password, string $copypwd)
     return false;
 }
 
+
+function inputTrim($data)
+    {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data =  htmlspecialchars($data);
+        return $data;
+    }
 function create_user(object $pdo,string $firstname,string $lastname,string $email,
                     string $password,$image,string $phone, string $address
 ) {

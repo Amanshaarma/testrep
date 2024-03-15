@@ -80,12 +80,13 @@ form label {
     display: block;
 }
 
-.form-field input, .form-field textarea, .form-field select {
+.form-field input, .form-field textarea, .form-field select, .form-field button{
     width: 100%;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     box-shadow: none;
     font-size: var(--input-size-14);
+    font-size: var(--button-size-14);
     padding: 12px 15px;
      color: var(--placeholder-color);
 }
@@ -127,7 +128,7 @@ form label {
 }
 
 
-.form-field input::placeholder, .form-field textarea::placeholder, .form-field select::placeholder{
+.form-field input::placeholder,.form-field button::placeholder, .form-field textarea::placeholder, .form-field select::placeholder{
     color: var(--placeholder-color);
 }
 
@@ -215,7 +216,7 @@ form input[type="checkbox"] {
     border-radius: 3px;
 }
 
-.formcheck input:checked + label:after {
+.formcheck input:checked + label:after button:checked+label::after{
    content: '';
     display: block;
     position: absolute;
@@ -227,6 +228,7 @@ form input[type="checkbox"] {
     border-width: 0 1px 1px 0;
     transform: rotate(45deg);
 }
+
 
 .formcheck {
     margin-top: 5px;
@@ -328,4 +330,19 @@ form.search-form {
 
 a.mobile-icon:hover {
     color: #fff; 
+}
+
+
+.button-container {
+    text-align: center;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 50px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
 }
